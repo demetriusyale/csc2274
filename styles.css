@@ -1,41 +1,55 @@
 h1{
-font-size:100px; 
-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-stroke-width: 5px;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width:1px;
-  -webkit-text-stroke-color: black;
+    font-size: 3rem;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+letter-spacing: .03rem;
 color:white;
-text-align: center;
-background-color:slategray;
-border-radius:25px;
+
+  text-align: center;
+text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+  
 }
-ul{
-background-color: bisque;
 
-
+p{
+padding-left: 5% ;
+padding-right: 5%;
+background-color: #A89A9B;
+border-radius: 5px;
+font-family: Georgia, 'Times New Roman', Times, serif;
 }
-p{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-text-align: center;
+#commonHeader{
 
+    background-color: aliceblue;
+     text-align: center;
+}
+#commonHeader li{
+    display: inline-block;
+   
+}
+#commonFooter{
+    background-color: darkgray;
+    text-align: center;
+border-radius: 5px;
+border-color: black;
+border-width: 1px;
 }
 body{
-background-color: antiquewhite;
+padding: 2%;
+    background-color: #D9D6D2;
+        margin-left: 5%;
+        margin-right:5%;
+}
+.darkBG{
+background-color: darkgray;
 
 }
-.altfont{
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+main{
 
+    margin-left: 10%;
+    margin-right:10%;
 }
-ol{
-font-family: 'Courier New', Courier, monospace;
-font-size: 34px;
-color:darkgreen;
-background-color: cadetblue;
-border-radius:25px;
-padding-left: 5%;
-background-size: 50%;
-
-
+.smallBorder{
+    border-style:solid;
+    border-color: black;
+    border-width: 1px;
 
 }
