@@ -10,11 +10,13 @@ text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 
 }
 
 p{
+
 padding-left: 5% ;
 padding-right: 5%;
 background-color: #A89A9B;
 border-radius: 5px;
 font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 #commonHeader{
 
@@ -26,30 +28,138 @@ font-family: Georgia, 'Times New Roman', Times, serif;
    
 }
 #commonFooter{
+    position:static;
+
     background-color: darkgray;
     text-align: center;
 border-radius: 5px;
 border-color: black;
 border-width: 1px;
+bottom: 0;
+width:100%;
+
+margin-top: 50%;
 }
 body{
-padding: 2%;
-    background-color: #D9D6D2;
-        margin-left: 5%;
-        margin-right:5%;
+
+background: #c3e2fa;
+background: radial-gradient(circle,rgba(195, 226, 250, 1) 0%, rgba(155, 189, 222, 1) 100%);  
+        
 }
 .darkBG{
 background-color: darkgray;
 
 }
 main{
-
+  
     margin-left: 10%;
     margin-right:10%;
+
 }
 .smallBorder{
-    border-style:solid;
-    border-color: black;
-    border-width: 1px;
+    border: solid black 1px;
+
+}
+
+/* hero banner with background image*/
+.hero{
+position:relative;
+background-image: url(/index.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;
+}
+.title h1{
+
+text-align: left;
+font-size:78px;
+margin: 100px;
+filter: drop-shadow(5px 5px 10px #000000);
+
+
+}
+.title {
+    display: flex;
+  align-items: flex-end;
+
+
+}
+img{
+width:25%;
+float:right;
+filter: drop-shadow(5px 5px 10px #000000);
+
+}
+.hero2{
+position:relative;
+background-image: url(/contactMeHero.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;}
+
+.hero3{
+position:relative;
+background-image: url(/AboutMehero.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;
+}
+
+.hero5{
+position:relative;
+background-image: url(/merchHero.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;
+}
+.hero6{
+position:relative;
+background-image: url(/editingHero.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;
+}
+.hero7{
+position:relative;
+background-image: url(/photoshopHero.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;
+}
+.hero8{
+position:relative;
+background-image: url(accoladesHero.png);
+background-size: cover;
+background-position: center;
+text-align: left;
+padding: 0;
+height: 200px;
+width:100%;
+}
+.blur{
+filter:blur(3px);
+    
+}
+.floatleft{
+
+float:left;
 
 }
