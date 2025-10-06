@@ -177,7 +177,7 @@ float:left;
     gap:10px;
     align-content: center;
     margin:2%;
-
+    justify-content: center;
 }
 .card {width:300px;
     background-color:#b2b9d1;
