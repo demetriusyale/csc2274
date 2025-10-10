@@ -1,3 +1,20 @@
+:root {
+--menu-bg: #8dc0f8;
+--menu-bg-sub: #3c7dab;
+--menu-hover: #1f3645;
+--menu-text: #ffffff;
+--menu-padding: 10px 14px;
+--menu-radius: 20px;
+--menu-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+--menu-gap: 4px;
+--font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+--menu-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+--main-bg:rgb(144, 202, 243);
+--blackStroke: 1px rgb(0, 0, 0);
+--pBackground:#8dc0f8;
+--basicDropShadow: 1px 1px 3px #000000;
+}
+
 h1{
     font-size: 3rem;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -5,8 +22,7 @@ letter-spacing: .03rem;
 color:white;
 
   text-align: center;
-text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-  
+text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);  
 }
 h2{
 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -15,24 +31,136 @@ padding-left: 2%;
 
 }
 p{
-
-
 padding:2%;
-background-color: #8dc0f8;
+background-color:var(--pBackground);
 border-radius: 5px;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 font-size:15px;
 
 }
-#commonHeader{
+/*HEADER STUFF*/
+ul{
+list-style:none;
+}
+.site-header {
+background: var(--pBackground);
+color: var(--menu-text);
+padding: 10px 20px 0px 20px;
+display: grid;
+grid-template-columns: auto 1fr;
+align-items: center;
+justify-content: space-between;
+border: 4px outset #285d93;
+}
+.main-nav{
+justify-self: center;}
+.site-header h1{
+display:inline-flex;
+vertical-align:middle;
+}
+/* Common link styles */
+.main-nav a {
+display: block;
+color: var(--menu-text);
+text-decoration:none ;
+padding: var(--menu-padding);
+border-radius: var(--menu-radius);
+white-space: nowrap;
+font-size: 32px;
+line-height: 1.2;  
+text-align: center;
+}
+.brand {
+filter: drop-shadow(5px 5px 10px #000000);
+font-size: 60px;
+color: var(--menu-text);
+display: flex;
+/* align text or image */
+align-items: center;
+gap: 8px;
+/* spacing between image and text if both are used */
+-webkit-text-stroke:var(--blackStroke);
+}
+.menu{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-    background-color: aliceblue;
-     text-align: center;
+.brand img {
+height: 100px;
+/* adjust logo size */
+width: auto;
+/* keep proportions */
+display: block;
+padding-bottom: 4%;
 }
-#commonHeader li{
-    display: inline-block;
-   
+.main-nav a:hover, .main-nav a:focus{
+    background: var(--menu-hover);
+filter: drop-shadow(3px 3px 5px #000000);
 }
+.menu--top{
+    display:flex;
+
+    gap: var(--menu-gap);
+    align-items: center;
+    flex-wrap:wrap;
+}
+.menu--top>li {
+position: relative;
+}
+/*Submenu*/
+.menu--sub {
+/* Make absolutely sure no global flex leaks in */
+display: none !important;
+/* hidden by default */
+position: absolute;
+top: 100%;
+left: 20;
+min-width: 100%;
+background: var(--menu-bg-sub);
+border-radius: var(--menu-radius);
+box-shadow: var(--menu-shadow);
+padding: 5px;
+z-index: 10;
+}
+
+.menu--sub>li>a {
+/* vertical stacking guaranteed */
+display: block !important;
+margin-right: 20px;
+}
+
+/* Show submenu on hover OR keyboard focus within */
+.has-dropdown:hover>.menu--sub,
+.has-dropdown:focus-within>.menu--sub {
+display: block !important;
+}
+.brandLogo{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+/*Remove default margins that inflate header height*/
+.site-header h1,
+.site-header h2 {
+  margin: 0;          
+  line-height: 1;
+}
+
+/*Reset list spacing so the nav doesn't add vertical space*/
+.menu,   
+.menu--top {
+  margin: 0;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
 #commonFooter{
     position:static;
 
@@ -60,7 +188,7 @@ main{
   
     margin-left: 10%;
     margin-right:10%;
-background-color:rgb(144, 202, 243);
+background-color:var(--main-bg);
 padding:1%
 }
 .smallBorder{
@@ -78,26 +206,6 @@ text-align: left;
 padding: 0;
 height: 300px;
 width:100%;
-}
-.title h1{
-
-text-align: left;
-font-size:78px;
-margin: 100px;
-filter: drop-shadow(5px 5px 10px #000000);
-
-
-}
-.title {
-    display: flex;
-  align-items: flex-end;
-
-
-}
-main>img{
-width:25%;
-float:right;
-filter: drop-shadow(5px 5px 10px #000000);
 }
 .hero2{
 position:relative;
@@ -160,9 +268,29 @@ padding: 0;
 height: 300px;
 width:100%;
 }
+
+/*titles inside hero*/
+
+.title h1{
+text-align: left;
+font-size:78px;
+margin: 100px;
+filter: drop-shadow(5px 5px 10px #000000);
+}
+.title {
+    display: flex;
+  align-items: flex-end;
+
+
+}
+main>img{
+width:25%;
+float:right;
+filter: drop-shadow(5px 5px 10px #000000);
+}
+
 .blur{
 filter:blur(3px);
-    
 }
 .floatleft{
 
@@ -188,7 +316,7 @@ float:left;
     border-style: solid;
     border-radius: 10px;
     font-size: 1.2rem;
-filter: drop-shadow(1px 1px 3px #000000);
+filter: drop-shadow(var(--basicDropShadow));
 
 }
 .card>button{
@@ -234,7 +362,7 @@ border-color:rgb(255, 218, 244);
     border-style: solid;
     border-radius: 10px;
     font-size: 1.2rem;
-filter: drop-shadow(1px 1px 3px #000000);
+filter: drop-shadow(var(--basicDropShadow));
 
 }
 .card2>img{
@@ -249,7 +377,7 @@ text-align: center;
 font-size: 50px;
 margin: -1px;
 color: rgb(255, 255, 255);
-filter: drop-shadow(1px 1px 5px #000000);
+filter: drop-shadow(var(--basicDropShadow));
 }
 .card2>p{
 color: #000000;
