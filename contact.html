@@ -16,10 +16,67 @@
   </div>
 </div>
 <main>
-<h1> Contact Me </h1>
+<h2> Contact Me </h2>
 
  <img style="float:left"src="djyale.png">
  <div class="flexText">
+  
+<form action= "https://formspree.io/f/xanpryao" method="POST">
+
+<label for="name">Name</label> 
+<input type ="text" id="name" name="name">
+<label for="email">Email</label> 
+<input type ="email" id="email" name="email" required>
+<label for="phone">Phone Number</label> 
+<input type ="pho" id="phone" name="phone">
+<label for="message">Message</label> 
+<textarea  id="message" name="message" rows="3" required>
+</textarea>
+<label for="reason-select">Reason for contacting*</label>
+
+<select name="reason" id="reason-select" required>
+  <option value="">--Please choose an option--</option>
+  <option value="sponsorships">Sponsorship Inquiry</option>
+  <option value="questions">Questions</option>
+  <option value="anger">Anger</option>
+  <option value="suggestions">Suggestions</option>
+  <option value="lonely">Lonely</option>
+  <option value="other">Other</option>
+</select>
+
+<fieldset>
+  <legend>How should I reach you?</legend>
+
+  <div>
+    <input type="radio" id="phoneRadio" name="contactOption" value="phone" checked />
+    <label for="phoneRadio">Phone</label>
+  </div>
+
+  <div>
+    <input type="radio" id="emailRadio" name="contactOption" value="email" />
+    <label for="emailRadio">Email</label>
+  </div>
+
+  <div>
+    <input type="radio" id="pigeonRadio" name="contactOption" value="pigeon" />
+    <label for="pigeon">Carrier Pigeon</label>
+  </div>
+</fieldset>
+<div class="checkboxGroup">
+<input type="checkbox" id="terms" name="terms" value="readTerms">
+<label for="requirements"> I've read the terms and conditions.*</label><br>
+<input type="checkbox" id="lawyer" name="lawyer" value="noLawyer">
+<label for="requirements"> I do not plan to sue DjYale*</label><br>
+
+</div>
+
+  <button class="formButton" type ="submit">Send</button>
+  <p>* = required</p>
+</form>
+
+
+
+  
 <p>
     Form section to contact me. Spot for people to put who they are.
 </p>
