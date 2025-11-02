@@ -42,7 +42,6 @@ function validateUser() {
   const value = username.value.trim();
 
   username.setCustomValidity(value.length >= 4 ? '' : 'Please enter a valid username (at least 4 characters)');
-  alert(username.validationMessage);
   usernameErr.textContent = username.validationMessage;
   displayError(username.validationMessage);
   return isValid;
