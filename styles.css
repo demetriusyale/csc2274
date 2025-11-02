@@ -532,3 +532,21 @@ input[type="checkbox"] {
 font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif
 }
 
+.overlay{
+display: none;
+background:rgba(255, 110, 110, 0.781);
+border-radius: 20px;
+padding:50px;
+position:fixed;
+top: 50px;
+justify-self: center;
+z-index: 1000;
+font-size:20px;
+font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+
+}
+.errorBox{
+display:none;
+
+
+}

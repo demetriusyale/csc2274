@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Contact - DjYale</title>
 <link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 <meta description="Contact Page for Demetrius Yale">
 </head>
 <body>
@@ -21,7 +22,7 @@
  <img style="float:left"src="djyale.png">
  <div class="flexText">
   
-<form action= "https://formspree.io/f/xanpryao" method="POST">
+<form action= "https://formspree.io/f/xanpryao" method="POST" id="contact-form">
 
 <label for="name">Name</label> 
 <input type ="text" id="name" name="name">
@@ -91,15 +92,6 @@
 </main>
 <!-- Common Footer-->
  <div id="commonFooter"></div>
-<script>
-    async function loadHTML(id, file) {
-      const el = document.getElementById(id);
-      const resp = await fetch(file);
-      el.innerHTML = await resp.text();
-    }
-    loadHTML("commonHeader", "header.html");
-    loadHTML("commonFooter", "footer.html");
-  </script>
 
 
 </body>
