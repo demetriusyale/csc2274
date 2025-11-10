@@ -9,7 +9,7 @@
     --menu-gap: 4px;
     --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     --menu-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    --main-bg: rgb(144, 202, 243);
+    --main-bg: rgba(170, 203, 233);
     --blackStroke: 1px rgb(0, 0, 0);
     --basicDropShadow: 1px 1px 3px #000000;
 }
@@ -26,9 +26,14 @@ h1 {
 
 h2 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
     padding-left: 2%;
 
+}
+h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+padding-left: 2%;
+padding-bottom: 0px;
+margin-bottom: 0px;
 }
 
 p {
@@ -42,7 +47,9 @@ p {
 }
 
 /*HEADER STUFF*/
-ul {
+ul.menu,
+ul.menu--top,
+ul.menu--sub {
     list-style: none;
 }
 
@@ -104,6 +111,28 @@ ul {
     padding-bottom: 4%;
 }
 
+
+.videoOnSide {
+width: 200px;
+}
+.videoAndText {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; 
+  justify-content: space-between; 
+  gap: 20px; 
+  margin:1%;
+
+}
+.VTText {
+  flex: 1; 
+}
+.videoOnSide {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(2px 2px 2px #000000);
+  
+}
 .main-nav a:hover,
 .main-nav a:focus {
     background: var(--menu-hover);
@@ -177,25 +206,40 @@ ul {
 
 
 
+.flex-demo p{
+
+width:100%;
+}
 #commonFooter {
-    position: static;
-
-    background-color: darkgray;
-    text-align: center;
-    border-radius: 5px;
-    border-color: black;
-    border-width: 1px;
-    bottom: 0;
-    width: 100%;
-
-    margin-top: 50%;
+  background-color: darkgray;
+  text-align: center;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top:2%;
+  width: auto; 
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(5px 5px 10px #000000);
+  border-style: solid;  
+}
+#commonFooter p {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 body {
 
     background: #c3e2fa;
-    background: radial-gradient(circle, rgba(195, 226, 250, 1) 0%, rgba(155, 189, 222, 1) 100%);
-
+    background:rgb(144, 202, 243);
+    
 }
 
 .darkBG {
@@ -208,7 +252,8 @@ main {
     margin-left: 10%;
     margin-right: 10%;
     background-color: var(--main-bg);
-    padding: 1%
+    padding: 1%;
+    filter: drop-shadow(5px 10px 10px #000000);
 }
 
 .smallBorder {
@@ -547,6 +592,13 @@ font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
 }
 .errorBox{
 display:none;
+
+
+}
+
+article{
+
+padding-right:30%;
 
 
 }
