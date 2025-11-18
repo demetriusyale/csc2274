@@ -36,7 +36,7 @@ One of the main types of edits I do use After Effects for, is the Rotoscoping fe
   <div class="VTText">
 <p>
   Another use I get out of After Effects, is using the horribly expensive "Newton" plugin. This is a powerful plugin that allows me to simulate physics/gravity with whatever compostitions I put together. Since I've downloaded it, I've used it for many different applications, like making what would normally be insanely complex motion graphics when made manually, and helping to visualize otherwise boring segments of videos.
-  (Include bouncing machines video, skeletron being decimated, and items falling.)
+ 
 </p>
 </div>
 <div class="VTVideo">
@@ -48,14 +48,31 @@ One of the main types of edits I do use After Effects for, is the Rotoscoping fe
 <!-- Common Footer-->
  <div id="commonFooter"></div>
 <script>
-    async function loadHTML(id, file) {
-      const el = document.getElementById(id);
-      const resp = await fetch(file);
-      el.innerHTML = await resp.text();
-    }
-    loadHTML("commonHeader", "header.html");
+  async function loadHTML(id, file) {
+    const el = document.getElementById(id);
+    const resp = await fetch(file);
+    el.innerHTML = await resp.text();
+  }
+
+  async function initLayout() {
+    // load header first
+    await loadHTML("commonHeader", "header.html");
+    // then footer (order doesn't really matter for this)
     loadHTML("commonFooter", "footer.html");
-  </script>
+
+    // now that header is in the DOM, wire up the hamburger
+    const navToggle = document.getElementById('navToggle');
+    const mainNav   = document.querySelector('.main-nav');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('is-open');
+      });
+    }
+  }
+
+  initLayout();
+</script>
 
 
 </body>

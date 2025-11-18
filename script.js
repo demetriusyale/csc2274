@@ -54,6 +54,34 @@ form.addEventListener('submit', (e) => {
     if (!okEmail) emaildata.reportValidity();
     else phonedata.reportValidity();
   }
-});
+})
+
+
+  async function loadHTML(id, file) {
+    const el = document.getElementById(id);
+    const resp = await fetch(file);
+    el.innerHTML = await resp.text();
+  }
+
+  async function initLayout() {
+    // load header first
+    await loadHTML("commonHeader", "header.html");
+    // then footer (order doesn't really matter for this)
+    loadHTML("commonFooter", "footer.html");
+
+    // now that header is in the DOM, wire up the hamburger
+    const navToggle = document.getElementById('navToggle');
+    const mainNav   = document.querySelector('.main-nav');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('is-open');
+      });
+    }
+  }
+
+  initLayout();
+
+;
 
 
