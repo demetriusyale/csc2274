@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home - DjYale</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="framework.css">
+  <meta description="Information about the DjYale website, his portfolio, merch shop, and ways to contact the channel.">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <!-- Common Header-->
+  <div id="commonHeader"></div>
+  <!-- Page  Content-->
+
+
+  <main>
+
+    <h2> Alpine Demo</h2>
+<div x-data="{ open: false }" class="modal">
+
+<div x-data="{ open: false }" class="accordion">
+  <button @click="open = !open" class="accordion__button">
+    Accordian Switch
+  </button>
+
+  <div x-show="open" class="accordion__panel">
+    <p>Your accordion content goes here.</p>
+  </div>
+</div>
+
+
+<div x-data="{ tab: 'one' }" class="tabs">
+  <nav class="tabs__nav">
+    <div class="tabButtons">
+    <button @click="tab = 'one'" :class="{ 'tab--active': tab === 'one' }">Rotoscoping</button>
+    <button @click="tab = 'two'":class="{ 'tab--active': tab === 'two' }">Motion Graphics</button>
+    <button @click="tab = 'three'":class="{ 'tab--active': tab === 'three' }">Physics Simulation</button>
+    </div>
+  </nav>
+
+  <div x-show="tab === 'one'" class="tabs__panel">
+    <p>One of the main types of edits I do use After Effects for, is the Rotoscoping feature. This allows me to "cut-out" parts of a video, and make the rest of it transparent. It's especially useful for adding segments of meme videos or recogonizable bits/jokes into my video in a clean way that blends well. I tend to style the rotoscoped video further, adding effects such as drop shadows and playing with the edges to make them blend even better. </p>
+  </div>
+
+  <div x-show="tab === 'two'" class="tabs__panel">
+    <p>Mainly done in Premiere, a lot of my motion graphics are made to make the viewing experience easier on the eyes, and to help explain certain topics while keeping the flow of the video moving smoothly. These bits also help add visual stimulus, increasing retention on my videos. </p>
+  </div>
+
+  <div x-show="tab === 'three'" class="tabs__panel">
+    <p>Another use I get out of After Effects, is using the horribly expensive "Newton" plugin. This is a powerful plugin that allows me to simulate physics/gravity with whatever compostitions I put together. Since I've downloaded it, I've used it for many different applications, like making what would normally be insanely complex motion graphics when made manually, and helping to visualize otherwise boring segments of videos.</p>
+
+    <div class="VTVideo">
+<img src=TerrariaStorage2.gif class="centeredVideo">
+</div>
+  </div>
+</div>
+
+
+
+
+  <button @click="open = true" class="modal__button">
+    Open Modal
+  </button>
+
+  <div 
+    x-show="open"
+    @click.away="open = false"
+    class="modal__overlay" >
+    <div class="modal__content">
+      <button @click="open = false" class="modal__close">×</button>
+
+      <h4>Modal Title</h4>
+      <p>This is the modal content.</p>
+    </div>
+  </div>
+
+<div x-data="{ selected: 'img1.jpg' }" class="gallery">
+   <div class="gallery__main">
+    <img :src="selected" alt="Main image">
+  </div>
+ <div class="gallery__thumbs">
+    <img src="img1.jpg" @click="selected = 'img1.jpg'">
+    <img src="img2.jpg" @click="selected = 'img2.jpg'">
+    <img src="img3.jpg" @click="selected = 'img3.jpg'">
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+  </main>
+  <!-- Common Footer-->
+
+  <div id="commonFooter"></div>
+<script>
+  async function loadHTML(id, file) {
+    const el = document.getElementById(id);
+    const resp = await fetch(file);
+    el.innerHTML = await resp.text();
+  }
+
+  async function initLayout() {
+    // load header first
+    await loadHTML("commonHeader", "header.html");
+    // then footer (order doesn't really matter for this)
+    loadHTML("commonFooter", "footer.html");
+
+    // now that header is in the DOM, wire up the hamburger
+    const navToggle = document.getElementById('navToggle');
+    const mainNav   = document.querySelector('.main-nav');
+    document.querySelectorAll('.has-dropdown > a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    if (window.matchMedia('(width < 900px)').matches) {
+      e.preventDefault(); // stop "#" jump
+      a.parentElement.classList.toggle('sub-open');
+    }
+  });
+});
+
+   if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('is-open'); // true if now open
+    navToggle.classList.toggle('is-open', open);      // sync button to nav state
+  });
+}
+
+  }
+
+  initLayout();
+</script>
+
+
+</body>
+
+</html>

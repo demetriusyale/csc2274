@@ -1,0 +1,33 @@
+button{
+background-color: #ffffff;
+font-size: 25px;
+ border-radius: 6px;
+}
+.tabButtons{
+  display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+padding-left:10%;
+padding-right:10%;
+padding-top:10px;
+}
+.tabs{
+background-color: rgb(126, 188, 243);
+padding: 10px;;
+margin:1%;
+
+}
+.centeredVideo{
+    display:grid;
+width:30%;
+justify-self: center;
+align-items: center;
+}
+.tabs .tabButtons button.tab--active {
+  background-color: #fffcae; 
+  font-weight: 700;
+
+}
+

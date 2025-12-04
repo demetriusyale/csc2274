@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Acoolades - DjYale</title>
+<title>Accolades - DjYale</title>
 <link rel="stylesheet" href="styles.css">
 <meta description="The best comments I've recieved across different platforms">
 </head>
@@ -17,18 +17,41 @@
   </div>
 </div>
 
-<main>
+<main class="accolades-main">
 <h2> Accolades </h2>
 <p>
 A collection of wise words and commendations from my happy viewers</p>
 
-<p>
-Content: Hate comments I've recieved over the years. 
-</p>
-
-
-
-
+<div class="VTVideo">
+<img src=accolade1.png class="centeredVideo" style="width:80%;">
+</div>
+<div class="VTVideo">
+<img src=accolade2.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade3.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade4.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade5.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade6.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade7.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade8.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade9.png class="centeredVideo" style="width:80%">
+</div>
+<div class="VTVideo">
+<img src=accolade10.png class="centeredVideo" style="width:80%">
+</div>
 </main>
 <!-- Common Footer-->
  <div id="commonFooter"></div>
@@ -49,11 +72,13 @@ Content: Hate comments I've recieved over the years.
     const navToggle = document.getElementById('navToggle');
     const mainNav   = document.querySelector('.main-nav');
 
-    if (navToggle && mainNav) {
-      navToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('is-open');
-      });
-    }
+   if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('is-open'); // true if now open
+    navToggle.classList.toggle('is-open', open);      // sync button to nav state
+  });
+}
+
   }
 
   initLayout();

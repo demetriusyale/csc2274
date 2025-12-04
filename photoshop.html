@@ -104,11 +104,13 @@ Basic Photoshop editing has let me make jokes I want shown in a video come alive
     const navToggle = document.getElementById('navToggle');
     const mainNav   = document.querySelector('.main-nav');
 
-    if (navToggle && mainNav) {
-      navToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('is-open');
-      });
-    }
+   if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('is-open'); // true if now open
+    navToggle.classList.toggle('is-open', open);      // sync button to nav state
+  });
+}
+
   }
 
   initLayout();
